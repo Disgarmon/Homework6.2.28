@@ -21,13 +21,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        super .touchesBegan(touches, with: event)
-//    }  //не понимаю, как работает тут переопределение. Нашел другой метод.
+//    }//не понимаю, как работает тут переопределение.  При нажатие на свободное поле вообще вылетает приложение. Нашел другой метод. см ниже.
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let logoutVC = segue.destination as? WelcomeViewController else { return }
-        logoutVC.userName = userName
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.userName = userName
     }
     // MARK: - privat
     
@@ -80,7 +81,7 @@ class LoginViewController: UIViewController {
     @IBAction func hiddenKeyboard(_ sender: Any) {
         UserNameTextField.resignFirstResponder()
         PasswordTextField.resignFirstResponder()
-    } //вариант по скрытию клавиатуры, подсмотренный в интернете:)
+    } //вариант по скрытию клавиатуры, который в результате использовал:)
     
 }
 

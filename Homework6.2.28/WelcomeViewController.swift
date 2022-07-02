@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let name = userName ?? nil else{ return }
+        guard let name = userName ?? nil else { return }
         greetingLabel.text = "Hello, \(name)"
     }
     //MARK: - IB Actions
